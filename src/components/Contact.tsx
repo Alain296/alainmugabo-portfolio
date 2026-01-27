@@ -98,7 +98,7 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground mb-4">Follow me on</p>
                 <div className="flex gap-3">
                   <a
-                    href="https://github.com/alainmugabo"
+                    href="https://github.com/Alain296"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -107,7 +107,7 @@ const Contact = () => {
                     <Github size={20} />
                   </a>
                   <a
-                    href="https://linkedin.com/in/alainmugabo"
+                    href="https://www.linkedin.com/in/alain-mugabo-308021325/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"

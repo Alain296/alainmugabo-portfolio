@@ -201,6 +201,14 @@ export const generateCVHTML = () => {
                     <span class="contact-icon">📍</span>
                     <span>Kigali, Rwanda</span>
                 </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🔗</span>
+                    <span>linkedin.com/in/alain-mugabo-308021325</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💻</span>
+                    <span>github.com/Alain296</span>
+                </div>
             </div>
             
             <div class="section" style="margin-top: 20px;">

@@ -1,8 +1,8 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/alainmugabo", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/alainmugabo", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/Alain296", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/alain-mugabo-308021325/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:mugaboalain58@gmail.com", label: "Email" },
 ];
 
