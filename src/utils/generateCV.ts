@@ -212,13 +212,24 @@ export const generateCVHTML = () => {
             </div>
             
             <div class="section" style="margin-top: 20px;">
-                <h2 class="section-title">Skills & Expertise</h2>
+                <h2 class="section-title">Technical Skills</h2>
                 <ul class="skills-list">
-                    <li>Excellent verbal and written communication</li>
-                    <li>Proficient in English</li>
-                    <li>Critical thinking and problem resolution</li>
-                    <li>Professional demeanor in corporate settings</li>
-                    <li>Adept at remote collaboration and project tools</li>
+                    <li>Java, C#, Python, C</li>
+                    <li>React.js, HTML/CSS, JavaScript</li>
+                    <li>MySQL, Oracle, PL/SQL</li>
+                    <li>Data Analytics & Data Science</li>
+                    <li>REST API, JSON, Node.js</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </div>
+            
+            <div class="section" style="margin-top: 20px;">
+                <h2 class="section-title">Soft Skills</h2>
+                <ul class="skills-list">
+                    <li>Excellent communication</li>
+                    <li>Critical thinking</li>
+                    <li>Problem resolution</li>
+                    <li>Remote collaboration</li>
                 </ul>
             </div>
             

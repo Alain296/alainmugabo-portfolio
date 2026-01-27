@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Folder, Droplets, Dumbbell, Coffee, BarChart3, Code2, GraduationCap, Building2, TrendingUp, Database } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, Code2, GraduationCap, Building2, TrendingUp, Database, ListTodo, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
@@ -9,6 +9,13 @@ import gymImage from "@/assets/gym-management.jpg";
 import waterImage from "@/assets/village-water.jpg";
 import coffeeImage from "@/assets/coffee-roastery.jpg";
 import sqlImage from "@/assets/sql-analytics.jpg";
+
+// Import other project images
+import studentRegistration from "@/assets/projects/student-registration.jpg";
+import todoApp from "@/assets/projects/todo-app.jpg";
+import libraryInterior from "@/assets/projects/library-interior.jpg";
+import realestateAnalytics from "@/assets/projects/realestate-analytics.jpg";
+import constructionSite from "@/assets/projects/construction-site.jpg";
 
 const projects = [
   {
@@ -52,43 +59,53 @@ const projects = [
     featured: true,
   },
   {
+    id: "student-registration-system",
     title: "Student Registration System",
     description: "A comprehensive system for managing student enrollment, course registration, and academic records using object-oriented design principles.",
     technologies: ["Java", "OOP", "MySQL"],
     github: "https://github.com/alainmugabo/student-registration",
     icon: GraduationCap,
+    image: studentRegistration,
     featured: false,
   },
   {
+    id: "todo-app",
     title: "To-Do List Application",
     description: "Full-stack web application for task management with creating, editing, deleting, and marking tasks as complete.",
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/alainmugabo/todo-app",
-    icon: Code2,
+    icon: ListTodo,
+    image: todoApp,
     featured: false,
   },
   {
+    id: "library-management-system",
     title: "Library Management System",
     description: "Database-driven system for library operations including book inventory, member management, and borrowing transactions.",
     technologies: ["Oracle SQL", "PL/SQL"],
     github: "https://github.com/alainmugabo/library-management",
-    icon: Database,
+    icon: BookOpen,
+    image: libraryInterior,
     featured: false,
   },
   {
+    id: "real-estate-analysis",
     title: "Real Estate Analysis",
     description: "Machine learning application analyzing real estate market trends and predicting property values based on various features.",
     technologies: ["Python", "ML", "Pandas", "Scikit-learn"],
     github: "https://github.com/alainmugabo/real-estate-analysis",
     icon: TrendingUp,
+    image: realestateAnalytics,
     featured: false,
   },
   {
+    id: "construction-management",
     title: "Construction Management",
     description: "Application for managing construction projects, tracking progress, resources, and generating reports.",
     technologies: ["Java", "OOP", "MySQL"],
     github: "https://github.com/alainmugabo/construction-management",
     icon: Building2,
+    image: constructionSite,
     featured: false,
   },
 ];
@@ -220,22 +237,22 @@ const Projects = () => {
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                 className="glass-card rounded-xl overflow-hidden group hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <IconComponent className="text-primary" size={24} />
+                {/* Project Image */}
+                <div className="relative h-36 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                  <div className="absolute bottom-3 left-3">
+                    <div className="p-2 rounded-lg bg-primary/20 backdrop-blur-sm">
+                      <IconComponent className="text-primary" size={20} />
                     </div>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`View ${project.title} on GitHub`}
-                    >
-                      <Github size={20} />
-                    </a>
                   </div>
+                </div>
 
+                <div className="p-5">
                   <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
@@ -245,7 +262,7 @@ const Projects = () => {
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
                         className="text-xs font-mono px-2 py-1 rounded-md bg-secondary text-muted-foreground"
@@ -255,21 +272,32 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <Button
-                    asChild
-                    variant="ghost"
-                    size="sm"
-                    className="w-full hover:bg-primary/10 hover:text-primary"
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  <div className="flex gap-2">
+                    <Button
+                      asChild
+                      variant="default"
+                      size="sm"
+                      className="flex-1"
                     >
-                      <ExternalLink size={16} className="mr-2" />
-                      View on GitHub
-                    </a>
-                  </Button>
+                      <Link to={`/project/${project.id}`}>
+                        <ExternalLink size={16} className="mr-2" />
+                        View Details
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                    >
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github size={16} />
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </motion.article>
             );
