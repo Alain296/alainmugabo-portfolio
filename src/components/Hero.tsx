@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/profile.jpeg";
 import { downloadCV } from "@/utils/generateCV";
@@ -15,7 +15,7 @@ const Hero = () => {
 
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Profile Image */}
+          {/* Profile Image with Open to Opportunities Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -29,6 +29,24 @@ const Hero = () => {
                 alt="Alain Mugabo"
                 className="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover object-top border-4 border-primary/30 shadow-2xl"
               />
+              {/* Open to Opportunities Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.8 }}
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap"
+              >
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <div className="relative flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-emerald-500/90 to-teal-500/90 rounded-full border border-emerald-400/50 shadow-lg">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                    </span>
+                    <span className="text-xs font-medium text-white">Open to Opportunities</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 

@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, Code2, GraduationCap, Building2, TrendingUp, Database, ListTodo, BookOpen } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, Code2, GraduationCap, Building2, TrendingUp, Database, ListTodo, BookOpen, FolderKanban, Cpu, Calendar, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
@@ -16,6 +16,49 @@ import todoApp from "@/assets/projects/todo-app.jpg";
 import libraryInterior from "@/assets/projects/library-interior.jpg";
 import realestateAnalytics from "@/assets/projects/realestate-analytics.jpg";
 import constructionSite from "@/assets/projects/construction-site.jpg";
+
+// Animated counter component
+const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const countRef = useRef(null);
+  const isInView = useInView(countRef, { once: true });
+
+  useEffect(() => {
+    if (!isInView) return;
+    
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeOutQuart * end));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration, isInView]);
+
+  return (
+    <span ref={countRef} className="tabular-nums">
+      {count}{suffix}
+    </span>
+  );
+};
+
+const stats = [
+  { icon: FolderKanban, value: 9, label: "PROJECTS DELIVERED", suffix: "" },
+  { icon: Cpu, value: 12, label: "TECHNOLOGIES", suffix: "+" },
+  { icon: Calendar, value: 4, label: "YEARS EXPERIENCE", suffix: "" },
+  { icon: Users, value: 500, label: "USERS IMPACTED", suffix: "+" },
+];
 
 const projects = [
   {
@@ -112,7 +155,9 @@ const projects = [
 
 const Projects = () => {
   const ref = useRef(null);
+  const statsRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const statsInView = useInView(statsRef, { once: true, margin: "-50px" });
 
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
@@ -120,13 +165,45 @@ const Projects = () => {
   return (
     <section id="projects" className="section-padding">
       <div className="container">
-        <div className="text-center mb-16">
+        {/* Header with gradient text */}
+        <div className="text-center mb-12">
           <span className="text-primary text-sm font-medium tracking-wider uppercase">
-            Projects
+            Portfolio
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3">
-            Featured Work
+          <h2 className="text-3xl md:text-5xl font-bold mt-3 bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Featured Projects
           </h2>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-balance">
+            Explore my comprehensive portfolio of innovative software solutions spanning web applications, 
+            data analytics systems, and database management. Each project demonstrates technical expertise, 
+            creative problem-solving, and real-world impact.
+          </p>
+        </div>
+
+        {/* Stats Section */}
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16">
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={statsInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card rounded-xl p-6 text-center group hover:border-primary/40 transition-all duration-300"
+              >
+                <div className="flex justify-center mb-3">
+                  <IconComponent className="text-primary/60 group-hover:text-primary transition-colors" size={24} />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent mb-2">
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
+                  {stat.label}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* Featured Projects with Images */}
