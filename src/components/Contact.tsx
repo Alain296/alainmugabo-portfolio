@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -58,7 +58,7 @@ const Contact = () => {
 
               <div className="space-y-4">
                 <a
-                  href="mailto:alainmugabo@example.com"
+                  href="mailto:mugaboalain58@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group"
                 >
                   <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
@@ -66,7 +66,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">alainmugabo@example.com</p>
+                    <p className="font-medium">mugaboalain58@gmail.com</p>
+                  </div>
+                </a>
+
+                <a
+                  href="tel:+250782499569"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors group"
+                >
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <Phone size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <p className="font-medium">+250 782 499 569</p>
                   </div>
                 </a>
 
