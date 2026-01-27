@@ -479,20 +479,6 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            {/* Actions */}
-            <div className="glass-card rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-4">View Project</h3>
-              <Button asChild className="w-full" size="lg">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="mr-2" size={18} />
-                  View on GitHub
-                </a>
-              </Button>
-            </div>
           </motion.div>
         </div>
       </main>
