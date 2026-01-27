@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/profile.jpeg";
+import { downloadCV } from "@/utils/generateCV";
 
 const Hero = () => {
   return (
@@ -72,11 +73,14 @@ const Hero = () => {
                 View My Work
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-muted-foreground/30 hover:border-primary/50">
-              <a href="/cv.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </a>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-muted-foreground/30 hover:border-primary/50"
+              onClick={downloadCV}
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download CV
             </Button>
           </motion.div>
 
