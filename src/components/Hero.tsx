@@ -26,7 +26,7 @@ const Hero = () => {
               <img
                 src={profileImage}
                 alt="Alain Mugabo"
-                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+                className="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover object-top border-4 border-primary/30 shadow-2xl"
               />
             </div>
           </motion.div>
