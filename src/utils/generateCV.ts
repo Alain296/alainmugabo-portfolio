@@ -233,7 +233,7 @@ export const generateCVHTML = () => {
             <section class="main-section">
                 <h2 class="main-title">Education</h2>
                 <div class="edu-item">
-                    <p class="edu-date">(2021 - PRESENT)</p>
+                    <p class="edu-date">(2023 - Present)</p>
                     <p class="edu-school">ADVENTIST UNIVERSITY OF CENTRAL AFRICA (AUCA)</p>
                     <p class="edu-degree">Bachelor of Software Engineering</p>
                 </div>
