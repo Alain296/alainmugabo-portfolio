@@ -90,9 +90,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex justify-center gap-4"
           >
-            {[
-              { icon: Github, href: "https://github.com/alainmugabo", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com/in/alainmugabo", label: "LinkedIn" },
+          {[
+              { icon: Github, href: "https://github.com/Alain296", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/alain-mugabo-308021325/", label: "LinkedIn" },
               { icon: Mail, href: "mailto:mugaboalain58@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
