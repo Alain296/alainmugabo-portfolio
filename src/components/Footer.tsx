@@ -41,7 +41,7 @@ const Footer = () => {
               </a>
             ))}
             <a
-              href="https://wa.me/250780035482"
+              href="https://api.whatsapp.com/send/?phone=250782499569&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-muted-foreground hover:text-primary transition-colors"
