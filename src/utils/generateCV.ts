@@ -267,6 +267,38 @@ export const generateCVHTML = () => {
             </section>
             
             <section class="main-section">
+                <h2 class="main-title">Projects</h2>
+                <div class="exp-item">
+                    <p class="exp-title">Village Water System</p>
+                    <p class="exp-date">React.js • Django • MySQL • JWT</p>
+                    <ul class="exp-list">
+                        <li>Full-stack app for automated water usage tracking and billing</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <p class="exp-title">Gym Management System</p>
+                    <p class="exp-date">Java • Spring Boot • MySQL</p>
+                    <ul class="exp-list">
+                        <li>Complete membership and training management solution</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <p class="exp-title">Coffee Roastery Management</p>
+                    <p class="exp-date">PL/SQL • Oracle • Triggers</p>
+                    <ul class="exp-list">
+                        <li>Database solution for specialty coffee operations</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <p class="exp-title">SQL Analytics Project</p>
+                    <p class="exp-date">SQL • Oracle • Window Functions</p>
+                    <ul class="exp-list">
+                        <li>Advanced analytics using window functions on e-commerce data</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="main-section">
                 <h2 class="main-title">Additional Information</h2>
                 <div class="additional">
                     <p><strong>Availability:</strong> Flexible (Part-time or Full-time)</p>
