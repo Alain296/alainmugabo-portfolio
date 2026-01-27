@@ -272,32 +272,17 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      variant="default"
-                      size="sm"
-                      className="flex-1"
-                    >
-                      <Link to={`/project/${project.id}`}>
-                        <ExternalLink size={16} className="mr-2" />
-                        View Details
-                      </Link>
-                    </Button>
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="sm"
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github size={16} />
-                      </a>
-                    </Button>
-                  </div>
+                  <Button
+                    asChild
+                    variant="default"
+                    size="sm"
+                    className="w-full"
+                  >
+                    <Link to={`/project/${project.id}`}>
+                      <ExternalLink size={16} className="mr-2" />
+                      View Details
+                    </Link>
+                  </Button>
                 </div>
               </motion.article>
             );
