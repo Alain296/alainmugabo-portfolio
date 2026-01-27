@@ -134,7 +134,7 @@ const Hero = () => {
               </a>
             ))}
             <a
-              href="https://wa.me/250780035482"
+              href="https://api.whatsapp.com/send/?phone=250782499569&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
