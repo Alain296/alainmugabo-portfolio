@@ -71,20 +71,29 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
           >
-            Hi, I'm{" "}
-            <span className="gradient-text">Alain Mugabo</span>
+            <span className="gradient-text">Building Digital Solutions</span>
+            <br />
+            <span className="text-foreground">for Global Impact</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-sm md:text-base text-primary/80 font-mono tracking-wide mb-6"
           >
-            A passionate final-year Software Engineering student at AUCA, building reliable, 
-            scalable, and user-friendly applications.
+            Full-Stack Developer | Data Scientist | Innovation Catalyst
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-balance"
+          >
+            Passionate software engineering student at <span className="text-foreground font-medium">AUCA</span>, specializing in full-stack development with <span className="text-foreground font-medium">Java, React, Python</span>, and data analytics. Creating innovative technology solutions that solve real-world problems in healthcare, education, and community systems globally.
           </motion.p>
 
           <motion.div
