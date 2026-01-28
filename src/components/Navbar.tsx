@@ -33,8 +33,11 @@ const Navbar = () => {
       }`}
     >
       <nav className="container flex items-center justify-between">
-        <a href="#" className="text-xl font-bold gradient-text">
-          AM
+        <a href="#" className="flex items-center gap-2 group">
+          <span className="text-xl font-bold gradient-text">AM</span>
+          <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors hidden sm:inline">
+            Alain Mugabo
+          </span>
         </a>
 
         {/* Desktop Navigation */}
