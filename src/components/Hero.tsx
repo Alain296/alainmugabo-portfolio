@@ -12,6 +12,12 @@ import profileImage from "@/assets/profile.jpeg";
 import { downloadCV } from "@/utils/generateCV";
 
 const Hero = () => {
+  const openExternal = (url: string) => {
+    // Some sites (like Instagram) block being opened inside iframes.
+    // Force a real new tab/window.
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Elements */}
@@ -125,27 +131,52 @@ const Hero = () => {
             className="flex justify-center gap-4"
           >
           {[
-              { icon: Mail, href: "mailto:mugaboalain58@gmail.com", label: "Email" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/alain-mugabo-308021325/", label: "LinkedIn" },
-              { icon: Github, href: "https://github.com/Alain296", label: "GitHub" },
-              { icon: Instagram, href: "https://www.instagram.com/_____alain7", label: "Instagram" },
-              { icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
-            ].map(({ icon: Icon, href, label }) => (
+            { icon: Mail, href: "mailto:mugaboalain58@gmail.com", label: "Email" },
+            {
+              icon: Linkedin,
+              href: "https://www.linkedin.com/in/alain-mugabo-308021325/",
+              label: "LinkedIn",
+            },
+            { icon: Github, href: "https://github.com/Alain296", label: "GitHub" },
+            {
+              icon: Instagram,
+              href: "https://www.instagram.com/_____alain7/",
+              label: "Instagram",
+            },
+            { icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
+          ].map(({ icon: Icon, href, label }) => {
+            const isEmail = href.startsWith("mailto:");
+
+            return (
               <a
                 key={label}
                 href={href}
-                target={label === "Email" ? "_self" : "_blank"}
-                rel="noopener noreferrer"
+                target={isEmail ? "_self" : "_blank"}
+                rel={isEmail ? undefined : "noopener noreferrer"}
+                referrerPolicy={isEmail ? undefined : "no-referrer"}
+                onClick={(e) => {
+                  if (isEmail) return;
+                  e.preventDefault();
+                  openExternal(href);
+                }}
                 className="p-3 rounded-full glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
                 aria-label={label}
               >
                 <Icon size={20} />
               </a>
-            ))}
+            );
+          })}
             <a
               href="https://api.whatsapp.com/send/?phone=250782499569&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
+              referrerPolicy="no-referrer"
+              onClick={(e) => {
+                e.preventDefault();
+                openExternal(
+                  "https://api.whatsapp.com/send/?phone=250782499569&text&type=phone_number&app_absent=0"
+                );
+              }}
               className="p-3 rounded-full glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
               aria-label="WhatsApp"
             >
