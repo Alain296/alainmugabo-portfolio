@@ -84,7 +84,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-sm md:text-base text-primary/80 font-mono tracking-wide mb-6"
           >
-            Full-Stack Developer | Data Scientist | Innovation Catalyst
+            Full-Stack Developer | AI Enthusiast | Creative Designer
           </motion.p>
 
           <motion.p
@@ -93,7 +93,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto text-balance"
           >
-            Passionate software engineering student at <span className="text-foreground font-medium">AUCA</span>, specializing in full-stack development with <span className="text-foreground font-medium">Java, React, Python</span>, and data analytics. Creating innovative technology solutions that solve real-world problems in healthcare, education, and community systems globally.
+            Passionate software engineering student at <span className="text-foreground font-medium">AUCA</span>, combining <span className="text-foreground font-medium">AI, Machine Learning, and Creative Design</span> with full-stack development. Experienced in building AI-powered applications, photo editing, and creating visually stunning digital experiences using tools like <span className="text-foreground font-medium">Python, Photoshop, and Generative AI</span>.
           </motion.p>
 
           <motion.div
