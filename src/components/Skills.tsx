@@ -6,27 +6,31 @@ import {
   Globe, 
   GitBranch, 
   Layers,
-  BarChart3,
   BrainCircuit,
   Network,
-  FileJson,
-  Plug
+  Plug,
+  Sparkles,
+  Palette,
+  Image,
+  Wand2,
+  PenTool
 } from "lucide-react";
 
 const skills = [
+  { name: "Python", level: 85, icon: Code2, color: "text-yellow-500" },
+  { name: "AI & Machine Learning", level: 80, icon: Sparkles, color: "text-violet-500" },
+  { name: "Generative AI (ChatGPT, Midjourney)", level: 85, icon: Wand2, color: "text-pink-500" },
+  { name: "Photo Editing & Design", level: 80, icon: Image, color: "text-rose-500" },
+  { name: "Adobe Photoshop & Illustrator", level: 75, icon: Palette, color: "text-blue-400" },
+  { name: "UI/UX Design", level: 75, icon: PenTool, color: "text-cyan-400" },
+  { name: "Data Science & Analytics", level: 80, icon: BrainCircuit, color: "text-emerald-500" },
   { name: "Java", level: 90, icon: Code2, color: "text-orange-500" },
-  { name: "C#", level: 85, icon: Code2, color: "text-purple-500" },
-  { name: "Python", level: 80, icon: Code2, color: "text-yellow-500" },
+  { name: "React", level: 75, icon: Globe, color: "text-sky-400" },
   { name: "MySQL", level: 85, icon: Database, color: "text-blue-500" },
   { name: "Object-Oriented Programming", level: 90, icon: Layers, color: "text-cyan-500" },
-  { name: "C Programming", level: 75, icon: Code2, color: "text-gray-400" },
-  { name: "React", level: 60, icon: Globe, color: "text-sky-400" },
   { name: "Git & GitHub", level: 80, icon: GitBranch, color: "text-red-500" },
-  { name: "HTML, CSS, JavaScript", level: 75, icon: Globe, color: "text-amber-500" },
-  { name: "Data Analytics", level: 75, icon: BarChart3, color: "text-emerald-500" },
-  { name: "Data Science", level: 70, icon: BrainCircuit, color: "text-violet-500" },
-  { name: "Node.js", level: 65, icon: Network, color: "text-green-500" },
-  { name: "JSON", level: 85, icon: FileJson, color: "text-yellow-400" },
+  { name: "HTML, CSS, JavaScript", level: 80, icon: Globe, color: "text-amber-500" },
+  { name: "Node.js", level: 70, icon: Network, color: "text-green-500" },
   { name: "REST API", level: 80, icon: Plug, color: "text-pink-500" },
 ];
 
