@@ -185,7 +185,7 @@ export const generateCVHTML = () => {
         <aside class="sidebar">
             <img src="${profileImage}" alt="Alain Mugabo" class="profile-img">
             <h1 class="name">ALAIN MUGABO</h1>
-            <p class="title">Software Engineer</p>
+            <p class="title">Software Engineer & Creative Designer</p>
             
             <div class="section">
                 <h2 class="section-title">Contact</h2>
@@ -214,12 +214,21 @@ export const generateCVHTML = () => {
             <div class="section" style="margin-top: 20px;">
                 <h2 class="section-title">Technical Skills</h2>
                 <ul class="skills-list">
-                    <li>Java, C#, Python, C</li>
-                    <li>React.js, HTML/CSS, JavaScript</li>
-                    <li>MySQL, Oracle, PL/SQL</li>
-                    <li>Data Analytics & Data Science</li>
-                    <li>REST API, JSON, Node.js</li>
-                    <li>Git & GitHub</li>
+                    <li>Python, Java, React.js</li>
+                    <li>AI & Machine Learning</li>
+                    <li>Generative AI (ChatGPT, Midjourney)</li>
+                    <li>MySQL, Data Science</li>
+                    <li>REST API, Node.js, Git</li>
+                </ul>
+            </div>
+            
+            <div class="section" style="margin-top: 20px;">
+                <h2 class="section-title">Design Skills</h2>
+                <ul class="skills-list">
+                    <li>Adobe Photoshop & Illustrator</li>
+                    <li>Photo Editing & Retouching</li>
+                    <li>UI/UX Design</li>
+                    <li>Brand & Logo Design</li>
                 </ul>
             </div>
             
@@ -245,7 +254,7 @@ export const generateCVHTML = () => {
             <section class="main-section">
                 <h2 class="main-title">Professional Summary</h2>
                 <p class="summary">
-                    Dedicated and expressive software engineering student possessing a solid background in communication, critical thinking, and technology. Enthusiastic about software creation, investigation, and human-focused solutions. Proficient in leveraging analytical and strategic approaches to architect, construct, and enhance digital platforms within fast-paced environments.
+                    Creative and versatile software engineering student combining technical expertise with strong design skills. Experienced in AI-powered applications, photo editing, and visual content creation. Proficient in leveraging generative AI tools, Adobe Creative Suite, and modern web technologies to create stunning digital experiences and innovative solutions.
                 </p>
             </section>
             
@@ -266,13 +275,24 @@ export const generateCVHTML = () => {
             <section class="main-section">
                 <h2 class="main-title">Experience</h2>
                 <div class="exp-item">
+                    <p class="exp-date">(2022 - PRESENT)</p>
+                    <p class="exp-title">CREATIVE DESIGNER & PHOTO EDITOR</p>
+                    <p class="exp-company">Freelance / Self-Employed</p>
+                    <ul class="exp-list">
+                        <li>Designed logos, branding materials using Adobe Photoshop & Illustrator</li>
+                        <li>Created AI-generated artwork using Midjourney and DALL-E</li>
+                        <li>Photo retouching for businesses and individuals</li>
+                        <li>Developed UI/UX mockups for web and mobile apps</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
                     <p class="exp-date">(2023 - PRESENT)</p>
                     <p class="exp-title">WEB DEVELOPER</p>
                     <p class="exp-company">Freelance Projects</p>
                     <ul class="exp-list">
-                        <li>Architected and built web applications for local enterprises</li>
-                        <li>Supported clients with digital presence strategies</li>
-                        <li>Cultivated client relationships and business partnerships</li>
+                        <li>Built web applications with AI-powered features</li>
+                        <li>Developed responsive, visually appealing interfaces</li>
+                        <li>Cultivated client relationships and partnerships</li>
                     </ul>
                 </div>
             </section>
