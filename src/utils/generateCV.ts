@@ -202,6 +202,10 @@ export const generateCVHTML = () => {
                     <span>Kigali, Rwanda</span>
                 </div>
                 <div class="contact-item">
+                    <span class="contact-icon">🌐</span>
+                    <a href="https://alainmugabo-portfolio.netlify.app/" target="_blank" style="color: #e94560; text-decoration: none;">alainmugabo-portfolio.netlify.app</a>
+                </div>
+                <div class="contact-item">
                     <span class="contact-icon">🔗</span>
                     <span>linkedin.com/in/alain-mugabo-308021325</span>
                 </div>
