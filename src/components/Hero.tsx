@@ -128,13 +128,13 @@ const Hero = () => {
               { icon: Mail, href: "mailto:mugaboalain58@gmail.com", label: "Email" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/alain-mugabo-308021325/", label: "LinkedIn" },
               { icon: Github, href: "https://github.com/Alain296", label: "GitHub" },
-              { icon: Instagram, href: "https://www.instagram.com/", label: "Instagram" },
+              { icon: Instagram, href: "https://www.instagram.com/alain_mugabo_", label: "Instagram" },
               { icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
-                target="_blank"
+                target={label === "Email" ? "_self" : "_blank"}
                 rel="noopener noreferrer"
                 className="p-3 rounded-full glass-card text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300"
                 aria-label={label}
