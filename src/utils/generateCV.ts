@@ -275,7 +275,7 @@ export const generateCVHTML = () => {
             <section class="main-section">
                 <h2 class="main-title">Experience</h2>
                 <div class="exp-item">
-                    <p class="exp-date">(2022 - PRESENT)</p>
+                    <p class="exp-date">(2024 - 2025)</p>
                     <p class="exp-title">CREATIVE DESIGNER & PHOTO EDITOR</p>
                     <p class="exp-company">Freelance / Self-Employed</p>
                     <ul class="exp-list">
