@@ -128,7 +128,7 @@ const Hero = () => {
               { icon: Mail, href: "mailto:mugaboalain58@gmail.com", label: "Email" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/alain-mugabo-308021325/", label: "LinkedIn" },
               { icon: Github, href: "https://github.com/Alain296", label: "GitHub" },
-              { icon: Instagram, href: "https://www.instagram.com/alain_mugabo_", label: "Instagram" },
+              { icon: Instagram, href: "https://www.instagram.com/_____alain7", label: "Instagram" },
               { icon: Facebook, href: "https://www.facebook.com/", label: "Facebook" },
             ].map(({ icon: Icon, href, label }) => (
               <a
