@@ -218,6 +218,7 @@ const Projects = () => {
               {cat}
             </Button>
           ))}
+        </div>
 
         {/* Stats Section */}
         <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16">
