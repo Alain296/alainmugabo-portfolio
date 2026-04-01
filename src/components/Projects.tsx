@@ -153,14 +153,39 @@ const projects = [
   },
 ];
 
+// Get unique technologies for filter
+const allTechnologies = ["All", ...Array.from(new Set(projects.flatMap((p) => p.technologies.map(t => {
+  if (["React.js", "HTML", "CSS", "JavaScript", "HTML, CSS, JavaScript"].some(x => t.includes(x))) return "Frontend";
+  if (["Java", "Spring Boot", "Django", "PHP", "Node.js"].some(x => t.includes(x))) return "Backend";
+  if (["MySQL", "Oracle", "PL/SQL", "SQL"].some(x => t.includes(x))) return "Database";
+  if (["Python", "ML", "Pandas", "Scikit-learn"].some(x => t.includes(x))) return "Data Science";
+  return "Other";
+}))))].filter((v, i, a) => a.indexOf(v) === i);
+
 const Projects = () => {
   const ref = useRef(null);
   const statsRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const statsInView = useInView(statsRef, { once: true, margin: "-50px" });
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const featuredProjects = projects.filter((p) => p.featured);
-  const otherProjects = projects.filter((p) => !p.featured);
+  const getCategory = (techs: string[]) => {
+    const categories: string[] = [];
+    techs.forEach(t => {
+      if (["React.js", "HTML", "CSS", "JavaScript"].some(x => t.includes(x))) categories.push("Frontend");
+      if (["Java", "Spring Boot", "Django", "PHP", "Node.js"].some(x => t.includes(x))) categories.push("Backend");
+      if (["MySQL", "Oracle", "PL/SQL", "SQL"].some(x => t.includes(x))) categories.push("Database");
+      if (["Python", "ML", "Pandas", "Scikit-learn"].some(x => t.includes(x))) categories.push("Data Science");
+    });
+    return categories;
+  };
+
+  const filteredProjects = activeFilter === "All"
+    ? projects
+    : projects.filter(p => getCategory(p.technologies).includes(activeFilter));
+
+  const featuredProjects = filteredProjects.filter((p) => p.featured);
+  const otherProjects = filteredProjects.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="section-padding">
