@@ -153,14 +153,6 @@ const projects = [
   },
 ];
 
-// Get unique technologies for filter
-const allTechnologies = ["All", ...Array.from(new Set(projects.flatMap((p) => p.technologies.map(t => {
-  if (["React.js", "HTML", "CSS", "JavaScript", "HTML, CSS, JavaScript"].some(x => t.includes(x))) return "Frontend";
-  if (["Java", "Spring Boot", "Django", "PHP", "Node.js"].some(x => t.includes(x))) return "Backend";
-  if (["MySQL", "Oracle", "PL/SQL", "SQL"].some(x => t.includes(x))) return "Database";
-  if (["Python", "ML", "Pandas", "Scikit-learn"].some(x => t.includes(x))) return "Data Science";
-  return "Other";
-}))))].filter((v, i, a) => a.indexOf(v) === i);
 
 const Projects = () => {
   const ref = useRef(null);
