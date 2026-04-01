@@ -205,6 +205,20 @@ const Projects = () => {
           </p>
         </div>
 
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {["All", "Frontend", "Backend", "Database", "Data Science"].map((cat) => (
+            <Button
+              key={cat}
+              variant={activeFilter === cat ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveFilter(cat)}
+              className={activeFilter === cat ? "" : "border-border hover:border-primary/50"}
+            >
+              {cat}
+            </Button>
+          ))}
+
         {/* Stats Section */}
         <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto mb-16">
           {stats.map((stat, index) => {
