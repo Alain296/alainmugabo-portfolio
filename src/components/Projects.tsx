@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, Code2, GraduationCap, Building2, TrendingUp, Database, ListTodo, BookOpen, FolderKanban, Cpu, Calendar, Users } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, GraduationCap, Building2, TrendingUp, ListTodo, BookOpen, FolderKanban, Cpu, Calendar, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
@@ -153,14 +153,31 @@ const projects = [
   },
 ];
 
+
 const Projects = () => {
   const ref = useRef(null);
   const statsRef = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const statsInView = useInView(statsRef, { once: true, margin: "-50px" });
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const featuredProjects = projects.filter((p) => p.featured);
-  const otherProjects = projects.filter((p) => !p.featured);
+  const getCategory = (techs: string[]) => {
+    const categories: string[] = [];
+    techs.forEach(t => {
+      if (["React.js", "HTML", "CSS", "JavaScript"].some(x => t.includes(x))) categories.push("Frontend");
+      if (["Java", "Spring Boot", "Django", "PHP", "Node.js"].some(x => t.includes(x))) categories.push("Backend");
+      if (["MySQL", "Oracle", "PL/SQL", "SQL"].some(x => t.includes(x))) categories.push("Database");
+      if (["Python", "ML", "Pandas", "Scikit-learn"].some(x => t.includes(x))) categories.push("Data Science");
+    });
+    return categories;
+  };
+
+  const filteredProjects = activeFilter === "All"
+    ? projects
+    : projects.filter(p => getCategory(p.technologies).includes(activeFilter));
+
+  const featuredProjects = filteredProjects.filter((p) => p.featured);
+  const otherProjects = filteredProjects.filter((p) => !p.featured);
 
   return (
     <section id="projects" className="section-padding">
@@ -178,6 +195,21 @@ const Projects = () => {
             data analytics systems, and database management. Each project demonstrates technical expertise, 
             creative problem-solving, and real-world impact.
           </p>
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {["All", "Frontend", "Backend", "Database", "Data Science"].map((cat) => (
+            <Button
+              key={cat}
+              variant={activeFilter === cat ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveFilter(cat)}
+              className={activeFilter === cat ? "" : "border-border hover:border-primary/50"}
+            >
+              {cat}
+            </Button>
+          ))}
         </div>
 
         {/* Stats Section */}

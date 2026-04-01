@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Education", href: "#education" },
+  { name: "Blog", href: "/blog", isRoute: true },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -44,14 +47,21 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} className="nav-link text-sm font-medium">
-                {link.name}
-              </a>
+              {(link as any).isRoute ? (
+                <Link to={link.href} className="nav-link text-sm font-medium">
+                  {link.name}
+                </Link>
+              ) : (
+                <a href={link.href} className="nav-link text-sm font-medium">
+                  {link.name}
+                </a>
+              )}
             </li>
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-2">
+          <ThemeToggle />
           <Button asChild variant="outline" size="sm" className="border-primary/50 hover:bg-primary hover:text-primary-foreground">
             <a href="#contact">Get in Touch</a>
           </Button>
@@ -78,13 +88,23 @@ const Navbar = () => {
           <ul className="flex flex-col p-4">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
-                  className="block py-3 text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
+                {(link as any).isRoute ? (
+                  <Link
+                    to={link.href}
+                    className="block py-3 text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="block py-3 text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                )}
               </li>
             ))}
             <li className="pt-3">
