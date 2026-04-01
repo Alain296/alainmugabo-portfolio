@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, Code2, GraduationCap, Building2, TrendingUp, Database, ListTodo, BookOpen, FolderKanban, Cpu, Calendar, Users, Filter } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, GraduationCap, Building2, TrendingUp, ListTodo, BookOpen, FolderKanban, Cpu, Calendar, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
