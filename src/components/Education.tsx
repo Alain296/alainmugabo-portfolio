@@ -45,7 +45,7 @@ const Education = () => {
               <div className="flex flex-wrap gap-6 text-sm text-muted-foreground mb-6">
                 <div className="flex items-center gap-2">
                   <Calendar size={16} className="text-primary" />
-                  <span>2021 - 2025 (Expected)</span>
+                  <span>2022 - 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin size={16} className="text-primary" />
