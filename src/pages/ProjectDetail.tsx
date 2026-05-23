@@ -8,7 +8,6 @@ import { useState } from "react";
 import gymImage from "@/assets/gym-management.jpg";
 import waterImage from "@/assets/village-water.jpg";
 import coffeeImage from "@/assets/coffee-roastery.jpg";
-import sqlImage from "@/assets/sql-analytics.jpg";
 
 // Import gallery images
 import waterDashboard from "@/assets/projects/water-dashboard.jpg";
@@ -23,22 +22,6 @@ import coffeeRoasting from "@/assets/projects/coffee-roasting.jpg";
 import coffeeQuality from "@/assets/projects/coffee-quality.jpg";
 import coffeeInventory from "@/assets/projects/coffee-inventory.jpg";
 
-import sqlDashboard from "@/assets/projects/sql-dashboard.jpg";
-import sqlCode from "@/assets/projects/sql-code.jpg";
-import sqlRanking from "@/assets/projects/sql-ranking.jpg";
-
-import studentRegistration from "@/assets/projects/student-registration.jpg";
-import studentCourses from "@/assets/projects/student-courses.jpg";
-import studentRecords from "@/assets/projects/student-records.jpg";
-
-import todoApp from "@/assets/projects/todo-app.jpg";
-import todoWorkflow from "@/assets/projects/todo-workflow.jpg";
-import todoComplete from "@/assets/projects/todo-complete.jpg";
-
-import libraryInterior from "@/assets/projects/library-interior.jpg";
-import libraryCatalog from "@/assets/projects/library-catalog.jpg";
-import libraryBorrow from "@/assets/projects/library-borrow.jpg";
-
 import realestateAnalytics from "@/assets/projects/realestate-analytics.jpg";
 import realestateHomes from "@/assets/projects/realestate-homes.jpg";
 import realestateMl from "@/assets/projects/realestate-ml.jpg";
@@ -46,6 +29,12 @@ import realestateMl from "@/assets/projects/realestate-ml.jpg";
 import constructionSite from "@/assets/projects/construction-site.jpg";
 import constructionPlanning from "@/assets/projects/construction-planning.jpg";
 import constructionMaterials from "@/assets/projects/construction-materials.jpg";
+
+import personalFinance from "@/assets/projects/personal-finance.jpg";
+import studyRoom from "@/assets/projects/study-room.jpg";
+import airbnbClone from "@/assets/projects/airbnb-clone.jpg";
+import umuhinziCredit from "@/assets/projects/umuhinzi-credit.jpg";
+import orkestraApp from "@/assets/projects/orkestra.jpg";
 
 interface Project {
   id: string;
