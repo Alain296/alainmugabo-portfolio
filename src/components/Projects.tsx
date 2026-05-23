@@ -55,8 +55,8 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; d
 };
 
 const stats = [
-  { icon: FolderKanban, value: 9, label: "PROJECTS DELIVERED", suffix: "" },
-  { icon: Cpu, value: 12, label: "TECHNOLOGIES", suffix: "+" },
+  { icon: FolderKanban, value: 10, label: "PROJECTS DELIVERED", suffix: "" },
+  { icon: Cpu, value: 15, label: "TECHNOLOGIES", suffix: "+" },
   { icon: Calendar, value: 4, label: "YEARS EXPERIENCE", suffix: "" },
   { icon: Users, value: 500, label: "USERS IMPACTED", suffix: "+" },
 ];
