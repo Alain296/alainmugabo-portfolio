@@ -1,21 +1,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, GraduationCap, Building2, TrendingUp, ListTodo, BookOpen, FolderKanban, Cpu, Calendar, Users } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
 import gymImage from "@/assets/gym-management.jpg";
 import waterImage from "@/assets/village-water.jpg";
 import coffeeImage from "@/assets/coffee-roastery.jpg";
-import sqlImage from "@/assets/sql-analytics.jpg";
 
 // Import other project images
-import studentRegistration from "@/assets/projects/student-registration.jpg";
-import todoApp from "@/assets/projects/todo-app.jpg";
-import libraryInterior from "@/assets/projects/library-interior.jpg";
 import realestateAnalytics from "@/assets/projects/realestate-analytics.jpg";
 import constructionSite from "@/assets/projects/construction-site.jpg";
+import personalFinance from "@/assets/projects/personal-finance.jpg";
+import studyRoom from "@/assets/projects/study-room.jpg";
+import airbnbClone from "@/assets/projects/airbnb-clone.jpg";
+import umuhinziCredit from "@/assets/projects/umuhinzi-credit.jpg";
+import orkestraApp from "@/assets/projects/orkestra.jpg";
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
@@ -54,8 +55,8 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; d
 };
 
 const stats = [
-  { icon: FolderKanban, value: 9, label: "PROJECTS DELIVERED", suffix: "" },
-  { icon: Cpu, value: 12, label: "TECHNOLOGIES", suffix: "+" },
+  { icon: FolderKanban, value: 10, label: "PROJECTS DELIVERED", suffix: "" },
+  { icon: Cpu, value: 15, label: "TECHNOLOGIES", suffix: "+" },
   { icon: Calendar, value: 4, label: "YEARS EXPERIENCE", suffix: "" },
   { icon: Users, value: 500, label: "USERS IMPACTED", suffix: "+" },
 ];
@@ -92,43 +93,53 @@ const projects = [
     featured: true,
   },
   {
-    id: "sql-analytics-project",
-    title: "SQL Analytics Project",
-    description: "Advanced SQL analytics using window functions on e-commerce data for trend analysis and category ranking.",
-    technologies: ["SQL", "Oracle", "Window Functions", "Analytics"],
-    github: "https://github.com/Alain296/The-WindowWizards-SQL-Project",
-    icon: BarChart3,
-    image: sqlImage,
+    id: "personal-finance-app",
+    title: "Personal Finance App",
+    description: "Personal finance tracker for managing income, expenses, budgets, and savings goals with insightful charts and category-based analytics.",
+    technologies: ["React", "Node.js", "Express", "PostgreSQL", "Prisma"],
+    github: "https://github.com/Alain296/personal-finance-app",
+    icon: Wallet,
+    image: personalFinance,
     featured: true,
   },
   {
-    id: "student-registration-system",
-    title: "Student Registration System",
-    description: "A comprehensive system for managing student enrollment, course registration, and academic records using object-oriented design principles.",
-    technologies: ["Java", "OOP", "MySQL"],
-    github: "https://github.com/alainmugabo/student-registration",
-    icon: GraduationCap,
-    image: studentRegistration,
+    id: "study-room-booking",
+    title: "Study Room Booking System",
+    description: "Web platform allowing university students to reserve study rooms in real time, with availability calendar, role-based admin approvals, and email notifications.",
+    technologies: ["React", "Node.js", "Express", "PostgreSQL", "JWT"],
+    github: "https://github.com/Alain296/study_room_booking_system",
+    icon: CalendarCheck,
+    image: studyRoom,
     featured: false,
   },
   {
-    id: "todo-app",
-    title: "To-Do List Application",
-    description: "Full-stack web application for task management with creating, editing, deleting, and marking tasks as complete.",
-    technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-    github: "https://github.com/alainmugabo/todo-app",
-    icon: ListTodo,
-    image: todoApp,
+    id: "airbnb-system",
+    title: "Airbnb Booking System",
+    description: "Full-stack vacation rental platform with property listings, search filters, secure bookings, host dashboards, and a RESTful API powering the experience.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "REST API"],
+    github: "https://github.com/Alain296/Airbnb-",
+    icon: Home,
+    image: airbnbClone,
     featured: false,
   },
   {
-    id: "library-management-system",
-    title: "Library Management System",
-    description: "Database-driven system for library operations including book inventory, member management, and borrowing transactions.",
-    technologies: ["Oracle SQL", "PL/SQL"],
-    github: "https://github.com/alainmugabo/library-management",
-    icon: BookOpen,
-    image: libraryInterior,
+    id: "umuhinzi-credit-app",
+    title: "Umuhinzi Credit App",
+    description: "Mobile-first credit application platform for Rwandan farmers, enabling loan requests, repayment tracking, and access to micro-financing tailored to agriculture cycles.",
+    technologies: ["React Native", "Node.js", "PostgreSQL", "Prisma", "REST API"],
+    github: "https://github.com/Alain296",
+    icon: Sprout,
+    image: umuhinziCredit,
+    featured: false,
+  },
+  {
+    id: "orkestra-app",
+    title: "Orkestra App",
+    description: "Collaborative workspace orchestrator that brings tasks, schedules, and team activity into one streamlined dashboard with real-time updates.",
+    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "WebSockets"],
+    github: "https://github.com/Alain296",
+    icon: Music,
+    image: orkestraApp,
     featured: false,
   },
   {
@@ -136,7 +147,7 @@ const projects = [
     title: "Real Estate Analysis",
     description: "Machine learning application analyzing real estate market trends and predicting property values based on various features.",
     technologies: ["Python", "ML", "Pandas", "Scikit-learn"],
-    github: "https://github.com/alainmugabo/real-estate-analysis",
+    github: "https://github.com/Alain296",
     icon: TrendingUp,
     image: realestateAnalytics,
     featured: false,
@@ -146,7 +157,7 @@ const projects = [
     title: "Construction Management",
     description: "Application for managing construction projects, tracking progress, resources, and generating reports.",
     technologies: ["Java", "OOP", "MySQL"],
-    github: "https://github.com/alainmugabo/construction-management",
+    github: "https://github.com/Alain296",
     icon: Building2,
     image: constructionSite,
     featured: false,

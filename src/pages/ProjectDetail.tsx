@@ -8,7 +8,6 @@ import { useState } from "react";
 import gymImage from "@/assets/gym-management.jpg";
 import waterImage from "@/assets/village-water.jpg";
 import coffeeImage from "@/assets/coffee-roastery.jpg";
-import sqlImage from "@/assets/sql-analytics.jpg";
 
 // Import gallery images
 import waterDashboard from "@/assets/projects/water-dashboard.jpg";
@@ -23,22 +22,6 @@ import coffeeRoasting from "@/assets/projects/coffee-roasting.jpg";
 import coffeeQuality from "@/assets/projects/coffee-quality.jpg";
 import coffeeInventory from "@/assets/projects/coffee-inventory.jpg";
 
-import sqlDashboard from "@/assets/projects/sql-dashboard.jpg";
-import sqlCode from "@/assets/projects/sql-code.jpg";
-import sqlRanking from "@/assets/projects/sql-ranking.jpg";
-
-import studentRegistration from "@/assets/projects/student-registration.jpg";
-import studentCourses from "@/assets/projects/student-courses.jpg";
-import studentRecords from "@/assets/projects/student-records.jpg";
-
-import todoApp from "@/assets/projects/todo-app.jpg";
-import todoWorkflow from "@/assets/projects/todo-workflow.jpg";
-import todoComplete from "@/assets/projects/todo-complete.jpg";
-
-import libraryInterior from "@/assets/projects/library-interior.jpg";
-import libraryCatalog from "@/assets/projects/library-catalog.jpg";
-import libraryBorrow from "@/assets/projects/library-borrow.jpg";
-
 import realestateAnalytics from "@/assets/projects/realestate-analytics.jpg";
 import realestateHomes from "@/assets/projects/realestate-homes.jpg";
 import realestateMl from "@/assets/projects/realestate-ml.jpg";
@@ -46,6 +29,12 @@ import realestateMl from "@/assets/projects/realestate-ml.jpg";
 import constructionSite from "@/assets/projects/construction-site.jpg";
 import constructionPlanning from "@/assets/projects/construction-planning.jpg";
 import constructionMaterials from "@/assets/projects/construction-materials.jpg";
+
+import personalFinance from "@/assets/projects/personal-finance.jpg";
+import studyRoom from "@/assets/projects/study-room.jpg";
+import airbnbClone from "@/assets/projects/airbnb-clone.jpg";
+import umuhinziCredit from "@/assets/projects/umuhinzi-credit.jpg";
+import orkestraApp from "@/assets/projects/orkestra.jpg";
 
 interface Project {
   id: string;
@@ -137,100 +126,130 @@ const projects: Record<string, Project> = {
     gallery: [coffeeRoasting, coffeeQuality, coffeeInventory],
     category: "Database Solution",
   },
-  "sql-analytics-project": {
-    id: "sql-analytics-project",
-    title: "WindowWizards SQL Analytics Project",
-    shortDescription: "Advanced SQL analytics using window functions on e-commerce data",
-    fullDescription: "An analytical project exploring advanced SQL capabilities using an e-commerce dataset. This project demonstrates mastery of SQL Window Functions for sophisticated data analysis, including trend analysis, category ranking, and identifying top-performing records. The project showcases how modern SQL techniques can transform raw data into actionable business insights.",
+  "personal-finance-app": {
+    id: "personal-finance-app",
+    title: "Personal Finance App",
+    shortDescription: "Track income, expenses, budgets and savings goals",
+    fullDescription: "A modern personal finance tracker that helps users take control of their money. It captures income and expenses, categorizes transactions, sets monthly budgets, and visualizes spending patterns through interactive charts. Built with a React front end and a Node.js/Prisma/PostgreSQL back end, it provides a fast, secure, and intuitive experience for daily money management.",
     technologies: [
-      { name: "SQL", icon: Code2 },
-      { name: "Oracle Database", icon: Database },
-      { name: "Window Functions", icon: Code2 },
-      { name: "LAG/LEAD", icon: Server },
-      { name: "RANK/DENSE_RANK", icon: Database },
+      { name: "React", icon: Layout },
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Code2 },
+      { name: "PostgreSQL", icon: Database },
+      { name: "Prisma ORM", icon: Database },
     ],
     features: [
-      "Transaction trend analysis with LAG/LEAD",
-      "Product ranking within categories",
-      "Top 3 best-sellers per region identification",
-      "Earliest transaction tracking",
-      "Advanced window function implementations",
-      "E-commerce data insights",
+      "Income and expense tracking",
+      "Category-based budgeting",
+      "Savings goals with progress indicators",
+      "Interactive charts and analytics",
+      "Secure authentication (JWT)",
+      "Responsive mobile-friendly UI",
     ],
-    github: "https://github.com/Alain296/The-WindowWizards-SQL-Project",
-    image: sqlImage,
-    gallery: [sqlDashboard, sqlCode, sqlRanking],
-    category: "Data Analytics",
+    github: "https://github.com/Alain296/personal-finance-app",
+    image: personalFinance,
+    gallery: [personalFinance, personalFinance, personalFinance],
+    category: "Full-Stack Web Application",
   },
-  "student-registration-system": {
-    id: "student-registration-system",
-    title: "Student Registration System",
-    shortDescription: "Comprehensive system for managing student enrollment and academic records",
-    fullDescription: "A comprehensive system for managing student enrollment, course registration, and academic records using object-oriented design principles. This application streamlines the administrative process of student management in educational institutions, providing tools for registration, course management, and record keeping.",
+  "study-room-booking": {
+    id: "study-room-booking",
+    title: "Study Room Booking System",
+    shortDescription: "Reserve university study rooms in real time",
+    fullDescription: "A web platform that lets university students book study rooms in real time. Students can view live room availability on a calendar, reserve a slot, and receive instant confirmation. Administrators manage rooms, approve special bookings, and access usage reports. Designed to remove the friction of manual room reservations on campus.",
     technologies: [
-      { name: "Java", icon: Code2 },
-      { name: "Object-Oriented Programming", icon: Layout },
-      { name: "MySQL", icon: Database },
+      { name: "React", icon: Layout },
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Code2 },
+      { name: "PostgreSQL", icon: Database },
+      { name: "JWT Auth", icon: Code2 },
     ],
     features: [
-      "Student enrollment management",
-      "Course registration workflow",
-      "Academic records tracking",
-      "Grade management system",
-      "Report generation",
-      "User authentication",
+      "Real-time room availability calendar",
+      "One-click booking and cancellation",
+      "Role-based access (student/admin)",
+      "Email notifications for confirmations",
+      "Booking history per student",
+      "Admin dashboard with usage reports",
     ],
-    github: "https://github.com/alainmugabo/student-registration",
-    image: studentRegistration,
-    gallery: [studentRegistration, studentCourses, studentRecords],
-    category: "Management System",
-  },
-  "todo-app": {
-    id: "todo-app",
-    title: "To-Do List Application",
-    shortDescription: "Full-stack web application for task management",
-    fullDescription: "A full-stack web application for task management with features for creating, editing, deleting, and marking tasks as complete. This productivity tool helps users organize their daily tasks and track their progress efficiently.",
-    technologies: [
-      { name: "PHP", icon: Code2 },
-      { name: "MySQL", icon: Database },
-      { name: "HTML", icon: Layout },
-      { name: "CSS", icon: Layout },
-      { name: "JavaScript", icon: Code2 },
-    ],
-    features: [
-      "Create new tasks",
-      "Edit existing tasks",
-      "Delete completed tasks",
-      "Mark tasks as complete",
-      "Task categorization",
-      "Responsive design",
-    ],
-    github: "https://github.com/alainmugabo/todo-app",
-    image: todoApp,
-    gallery: [todoApp, todoWorkflow, todoComplete],
+    github: "https://github.com/Alain296/study_room_booking_system",
+    image: studyRoom,
+    gallery: [studyRoom, studyRoom, studyRoom],
     category: "Web Application",
   },
-  "library-management-system": {
-    id: "library-management-system",
-    title: "Library Management System",
-    shortDescription: "Database-driven system for library operations",
-    fullDescription: "A database-driven system for library operations including book inventory, member management, and borrowing transactions. This system helps librarians manage their collections efficiently and provides members with easy access to library resources.",
+  "airbnb-system": {
+    id: "airbnb-system",
+    title: "Airbnb Booking System",
+    shortDescription: "Full-stack vacation rental booking platform",
+    fullDescription: "An Airbnb-inspired booking platform where hosts list properties and travelers search, filter, and book stays. The system includes secure authentication, host dashboards, listing management, image galleries, and a complete reservation workflow. The backend exposes a RESTful API that powers both the web client and future mobile integrations.",
     technologies: [
-      { name: "Oracle SQL", icon: Database },
-      { name: "PL/SQL", icon: Code2 },
+      { name: "React", icon: Layout },
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Code2 },
+      { name: "MongoDB", icon: Database },
+      { name: "REST API", icon: Code2 },
     ],
     features: [
-      "Book inventory management",
-      "Member registration",
-      "Borrowing transactions",
-      "Return tracking",
-      "Fine calculation",
-      "Report generation",
+      "Property listings with image galleries",
+      "Search and filter by location, price, dates",
+      "Secure booking and reservation management",
+      "Host dashboards and listing controls",
+      "User reviews and ratings",
+      "RESTful API tested with Postman and Swagger",
     ],
-    github: "https://github.com/alainmugabo/library-management",
-    image: libraryInterior,
-    gallery: [libraryInterior, libraryCatalog, libraryBorrow],
-    category: "Database Solution",
+    github: "https://github.com/Alain296/Airbnb-",
+    image: airbnbClone,
+    gallery: [airbnbClone, airbnbClone, airbnbClone],
+    category: "Full-Stack Web Application",
+  },
+  "umuhinzi-credit-app": {
+    id: "umuhinzi-credit-app",
+    title: "Umuhinzi Credit App",
+    shortDescription: "Micro-credit platform built for Rwandan farmers",
+    fullDescription: "A mobile-first credit application platform built for Rwandan farmers (umuhinzi means farmer in Kinyarwanda). It enables farmers to apply for loans tailored to their agricultural cycle, track repayments, and access financial education content. The platform connects farmers with micro-finance providers and reduces the paperwork and travel typically required to access credit.",
+    technologies: [
+      { name: "React Native", icon: Layout },
+      { name: "Node.js", icon: Server },
+      { name: "Express", icon: Code2 },
+      { name: "PostgreSQL", icon: Database },
+      { name: "Prisma", icon: Database },
+    ],
+    features: [
+      "Loan application workflow",
+      "Repayment tracking and reminders",
+      "Crop-cycle aligned payment plans",
+      "Farmer profile and credit history",
+      "SMS and email notifications",
+      "Admin panel for credit officers",
+    ],
+    github: "https://github.com/Alain296",
+    image: umuhinziCredit,
+    gallery: [umuhinziCredit, umuhinziCredit, umuhinziCredit],
+    category: "FinTech / Agriculture",
+  },
+  "orkestra-app": {
+    id: "orkestra-app",
+    title: "Orkestra App",
+    shortDescription: "Collaborative workspace orchestrator for teams",
+    fullDescription: "Orkestra brings tasks, schedules, and team activity into one streamlined dashboard. Teams can create projects, assign work, comment on tasks, and see real-time updates as members make progress. The app is designed for small product teams that need a clean, fast alternative to heavy enterprise tools.",
+    technologies: [
+      { name: "React", icon: Layout },
+      { name: "TypeScript", icon: Code2 },
+      { name: "Node.js", icon: Server },
+      { name: "PostgreSQL", icon: Database },
+      { name: "WebSockets", icon: Code2 },
+    ],
+    features: [
+      "Project and task management",
+      "Real-time activity updates",
+      "Team scheduling and calendar view",
+      "Comments and mentions on tasks",
+      "Role-based permissions",
+      "Clean, productivity-focused UI",
+    ],
+    github: "https://github.com/Alain296",
+    image: orkestraApp,
+    gallery: [orkestraApp, orkestraApp, orkestraApp],
+    category: "Productivity / SaaS",
   },
   "real-estate-analysis": {
     id: "real-estate-analysis",

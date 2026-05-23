@@ -1,348 +1,205 @@
-import profileImage from "@/assets/profile.jpeg";
-
 export const generateCVHTML = () => {
   return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alain Mugabo - Software Engineer CV</title>
     <style>
-        @page {
-            size: A4;
-            margin: 0;
+        @page { size: A4; margin: 18mm 18mm 18mm 18mm; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            background: #ffffff;
+            color: #000000;
+            font-family: Calibri, Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.35;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1a1a2e;
-            color: #ffffff;
-            line-height: 1.5;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
-        
-        .container {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 240px 1fr;
-        }
-        
-        .sidebar {
-            background: #16213e;
-            padding: 30px 20px;
-        }
-        
-        .main {
-            padding: 30px 25px;
-            background: #1a1a2e;
-        }
-        
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top;
-            border: 3px solid #0f3460;
-            margin: 0 auto 15px;
-            display: block;
-        }
-        
-        .name {
-            text-align: center;
-            font-size: 1.3rem;
+        .doc { max-width: 174mm; margin: 0 auto; }
+        h1.name {
+            font-size: 22pt;
             font-weight: 700;
-            margin-bottom: 3px;
-            color: #e94560;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2px;
         }
-        
         .title {
             text-align: center;
-            font-size: 0.9rem;
-            color: #a0a0a0;
-            margin-bottom: 25px;
-        }
-        
-        .section-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #e94560;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #0f3460;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 0.8rem;
-        }
-        
-        .contact-icon {
-            width: 18px;
-            margin-right: 8px;
-            color: #e94560;
-        }
-        
-        .skills-list {
-            list-style: none;
-        }
-        
-        .skills-list li {
-            padding: 6px 0;
-            font-size: 0.8rem;
-            border-bottom: 1px solid #0f3460;
-        }
-        
-        .skills-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .languages {
-            margin-top: 20px;
-        }
-        
-        .language-item {
+            font-size: 11pt;
+            color: #000;
             margin-bottom: 6px;
-            font-size: 0.8rem;
         }
-        
-        .main-section {
-            margin-bottom: 22px;
+        .contact {
+            text-align: center;
+            font-size: 10pt;
+            margin-bottom: 14px;
         }
-        
-        .main-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #e94560;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #0f3460;
+        .contact a { color: #000; text-decoration: none; }
+        h2.section {
+            font-size: 12pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            margin-top: 14px;
+            margin-bottom: 8px;
         }
-        
-        .summary {
-            font-size: 0.85rem;
-            color: #d0d0d0;
-            text-align: justify;
+        p { margin-bottom: 6px; text-align: justify; }
+        .item { margin-bottom: 10px; }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
         }
-        
-        .edu-item, .exp-item {
-            margin-bottom: 15px;
+        .row .left { font-weight: 700; }
+        .row .right { font-style: italic; font-size: 10pt; }
+        .sub { font-style: italic; font-size: 10.5pt; margin-bottom: 3px; }
+        ul { margin: 4px 0 4px 20px; }
+        li { margin-bottom: 2px; font-size: 10.5pt; }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 24px;
         }
-        
-        .edu-date, .exp-date {
-            font-size: 0.75rem;
-            color: #e94560;
-            margin-bottom: 3px;
-        }
-        
-        .edu-school, .exp-company {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-        
-        .edu-degree, .exp-title {
-            font-size: 0.8rem;
-            color: #a0a0a0;
-        }
-        
-        .exp-list {
-            list-style: disc;
-            margin-left: 18px;
-            margin-top: 6px;
-        }
-        
-        .exp-list li {
-            font-size: 0.8rem;
-            color: #d0d0d0;
-            margin-bottom: 4px;
-        }
-        
-        .additional {
-            font-size: 0.8rem;
-            color: #d0d0d0;
-        }
-        
-        .additional p {
-            margin-bottom: 4px;
-        }
+        .two-col p { margin-bottom: 2px; font-size: 10.5pt; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <img src="${profileImage}" alt="Alain Mugabo" class="profile-img">
-            <h1 class="name">ALAIN MUGABO</h1>
-            <p class="title">Software Engineer & Creative Designer</p>
-            
-            <div class="section">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-item">
-                    <span class="contact-icon">📱</span>
-                    <span>+250 782 499 569</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">✉️</span>
-                    <span>mugaboalain58@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <span>Kigali, Rwanda</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🌐</span>
-                    <a href="https://alainmugabo-portfolio.netlify.app/" target="_blank" style="color: #e94560; text-decoration: none;">alainmugabo-portfolio.netlify.app</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
-                    <span>linkedin.com/in/alain-mugabo-308021325</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">💻</span>
-                    <span>github.com/Alain296</span>
-                </div>
+    <div class="doc">
+        <h1 class="name">Alain Mugabo</h1>
+        <p class="title">Software Engineer &mdash; Full-Stack Developer</p>
+        <p class="contact">
+            Kigali, Rwanda &nbsp;|&nbsp; +250 782 499 569 &nbsp;|&nbsp;
+            <a href="mailto:mugaboalain58@gmail.com">mugaboalain58@gmail.com</a><br/>
+            <a href="https://github.com/Alain296">github.com/Alain296</a> &nbsp;|&nbsp;
+            <a href="https://www.linkedin.com/in/alain-mugabo-308021325">linkedin.com/in/alain-mugabo-308021325</a> &nbsp;|&nbsp;
+            <a href="https://alainmugabo-portfolio.netlify.app/">alainmugabo-portfolio.netlify.app</a>
+        </p>
+
+        <h2 class="section">Professional Summary</h2>
+        <p>
+            Final-year Software Engineering student at the Adventist University of Central Africa (AUCA),
+            currently enrolled in an intensive full-stack developer training at kLab Academy. Skilled in
+            building modern web applications using React, Node.js, Express, PostgreSQL and Prisma, with
+            hands-on experience in API testing (Swagger, Postman) and applied AI. Passionate about writing
+            clean, maintainable code and delivering reliable, user-centered software.
+        </p>
+
+        <h2 class="section">Education</h2>
+        <div class="item">
+            <div class="row">
+                <span class="left">Adventist University of Central Africa (AUCA)</span>
+                <span class="right">2022 &ndash; 2025</span>
             </div>
-            
-            <div class="section" style="margin-top: 20px;">
-                <h2 class="section-title">Technical Skills</h2>
-                <ul class="skills-list">
-                    <li>Python, Java, React.js</li>
-                    <li>AI & Machine Learning</li>
-                    <li>Generative AI (ChatGPT, Midjourney)</li>
-                    <li>MySQL, Data Science</li>
-                    <li>REST API, Node.js, Git</li>
-                </ul>
+            <p class="sub">Bachelor of Software Engineering (Final Year)</p>
+        </div>
+        <div class="item">
+            <div class="row">
+                <span class="left">Christ Roi High School</span>
+                <span class="right">2019 &ndash; 2022</span>
             </div>
-            
-            <div class="section" style="margin-top: 20px;">
-                <h2 class="section-title">Design Skills</h2>
-                <ul class="skills-list">
-                    <li>Adobe Photoshop & Illustrator</li>
-                    <li>Photo Editing & Retouching</li>
-                    <li>UI/UX Design</li>
-                    <li>Brand & Logo Design</li>
-                </ul>
+            <p class="sub">Mathematics, Chemistry &amp; Biology (MCB)</p>
+        </div>
+
+        <h2 class="section">Professional Training</h2>
+        <div class="item">
+            <div class="row">
+                <span class="left">kLab Academy &mdash; Full-Stack Developer Program</span>
+                <span class="right">April 2025 &ndash; Present</span>
             </div>
-            
-            <div class="section" style="margin-top: 20px;">
-                <h2 class="section-title">Soft Skills</h2>
-                <ul class="skills-list">
-                    <li>Excellent communication</li>
-                    <li>Critical thinking</li>
-                    <li>Problem resolution</li>
-                    <li>Remote collaboration</li>
-                </ul>
+            <p class="sub">Kigali, Rwanda</p>
+            <ul>
+                <li>Frontend development with React and modern JavaScript/TypeScript.</li>
+                <li>Backend development with Node.js, Express and RESTful API design.</li>
+                <li>Databases using PostgreSQL with Prisma ORM.</li>
+                <li>API testing and documentation with Swagger and Postman.</li>
+                <li>Applied AI track: prompt engineering and integrating AI services into apps.</li>
+            </ul>
+        </div>
+
+        <h2 class="section">Technical Skills</h2>
+        <div class="two-col">
+            <p><strong>Languages:</strong> JavaScript, TypeScript, Java, Python, C#, SQL, PL/SQL.</p>
+            <p><strong>Frontend:</strong> React, HTML5, CSS3, Tailwind CSS.</p>
+            <p><strong>Backend:</strong> Node.js, Express, Django, REST APIs.</p>
+            <p><strong>Databases:</strong> PostgreSQL, MySQL, Oracle, MongoDB.</p>
+            <p><strong>Tools:</strong> Prisma, Git/GitHub, Postman, Swagger.</p>
+            <p><strong>Other:</strong> AI &amp; Machine Learning basics, UI/UX, Adobe Photoshop.</p>
+        </div>
+
+        <h2 class="section">Experience</h2>
+        <div class="item">
+            <div class="row">
+                <span class="left">Freelance Web Developer</span>
+                <span class="right">2023 &ndash; Present</span>
             </div>
-            
-            <div class="languages">
-                <h2 class="section-title">Languages</h2>
-                <p class="language-item">• English</p>
-                <p class="language-item">• French</p>
-                <p class="language-item">• Kinyarwanda</p>
+            <p class="sub">Self-employed &mdash; Kigali, Rwanda</p>
+            <ul>
+                <li>Designed and built full-stack web applications for local clients.</li>
+                <li>Implemented REST APIs and integrated PostgreSQL/MySQL databases.</li>
+                <li>Integrated AI-powered features (chat, content generation) into client projects.</li>
+                <li>Managed client relationships from requirements gathering to deployment.</li>
+            </ul>
+        </div>
+        <div class="item">
+            <div class="row">
+                <span class="left">Creative Designer &amp; Photo Editor</span>
+                <span class="right">2022 &ndash; Present</span>
             </div>
-        </aside>
-        
-        <main class="main">
-            <section class="main-section">
-                <h2 class="main-title">Professional Summary</h2>
-                <p class="summary">
-                    Creative and versatile software engineering student combining technical expertise with strong design skills. Experienced in AI-powered applications, photo editing, and visual content creation. Proficient in leveraging generative AI tools, Adobe Creative Suite, and modern web technologies to create stunning digital experiences and innovative solutions.
-                </p>
-            </section>
-            
-            <section class="main-section">
-                <h2 class="main-title">Education</h2>
-                <div class="edu-item">
-                    <p class="edu-date">(2022 - 2025)</p>
-                    <p class="edu-school">ADVENTIST UNIVERSITY OF CENTRAL AFRICA (AUCA)</p>
-                    <p class="edu-degree">Bachelor of Software Engineering</p>
-                </div>
-                <div class="edu-item">
-                    <p class="edu-date">(2019 - 2022)</p>
-                    <p class="edu-school">CHRIST ROI HIGH SCHOOL</p>
-                    <p class="edu-degree">Mathematics, Chemistry & Biology (MCB)</p>
-                </div>
-            </section>
-            
-            <section class="main-section">
-                <h2 class="main-title">Experience</h2>
-                <div class="exp-item">
-                    <p class="exp-date">(2024 - 2025)</p>
-                    <p class="exp-title">CREATIVE DESIGNER & PHOTO EDITOR</p>
-                    <p class="exp-company">Freelance / Self-Employed</p>
-                    <ul class="exp-list">
-                        <li>Designed logos, branding materials using Adobe Photoshop & Illustrator</li>
-                        <li>Created AI-generated artwork using Midjourney and DALL-E</li>
-                        <li>Photo retouching for businesses and individuals</li>
-                        <li>Developed UI/UX mockups for web and mobile apps</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <p class="exp-date">(2023 - PRESENT)</p>
-                    <p class="exp-title">WEB DEVELOPER</p>
-                    <p class="exp-company">Freelance Projects</p>
-                    <ul class="exp-list">
-                        <li>Built web applications with AI-powered features</li>
-                        <li>Developed responsive, visually appealing interfaces</li>
-                        <li>Cultivated client relationships and partnerships</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section class="main-section">
-                <h2 class="main-title">Projects</h2>
-                <div class="exp-item">
-                    <p class="exp-title">Village Water System</p>
-                    <p class="exp-date">React.js • Django • MySQL • JWT</p>
-                    <ul class="exp-list">
-                        <li>Full-stack app for automated water usage tracking and billing</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <p class="exp-title">Gym Management System</p>
-                    <p class="exp-date">Java • Spring Boot • MySQL</p>
-                    <ul class="exp-list">
-                        <li>Complete membership and training management solution</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <p class="exp-title">Coffee Roastery Management</p>
-                    <p class="exp-date">PL/SQL • Oracle • Triggers</p>
-                    <ul class="exp-list">
-                        <li>Database solution for specialty coffee operations</li>
-                    </ul>
-                </div>
-                <div class="exp-item">
-                    <p class="exp-title">SQL Analytics Project</p>
-                    <p class="exp-date">SQL • Oracle • Window Functions</p>
-                    <ul class="exp-list">
-                        <li>Advanced analytics using window functions on e-commerce data</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section class="main-section">
-                <h2 class="main-title">Additional Information</h2>
-                <div class="additional">
-                    <p><strong>Availability:</strong> Flexible (Part-time or Full-time)</p>
-                    <p><strong>Work Style:</strong> Comfortable with remote collaboration</p>
-                    <p><strong>Interests:</strong> Software development, technical research, and innovative IT solutions</p>
-                    <p><strong>Openness:</strong> Seeking internships, freelance opportunities, or collaborative tech ventures</p>
-                </div>
-            </section>
-        </main>
+            <p class="sub">Freelance</p>
+            <ul>
+                <li>Designed logos, branding materials and social media visuals (Photoshop, Illustrator).</li>
+                <li>Produced AI-generated artwork using Midjourney and DALL-E.</li>
+                <li>Edited and retouched professional photos for businesses and individuals.</li>
+            </ul>
+        </div>
+
+        <h2 class="section">Selected Projects</h2>
+        <div class="item">
+            <p><strong>Personal Finance App</strong> &mdash; React, Node.js, Express, PostgreSQL, Prisma.<br/>
+            Personal finance tracker with income/expense tracking, budgets, savings goals and analytics charts.</p>
+        </div>
+        <div class="item">
+            <p><strong>Airbnb Booking System</strong> &mdash; React, Node.js, Express, MongoDB, REST API.<br/>
+            Vacation rental platform with property listings, secure bookings and host dashboards; API tested with Postman and Swagger.</p>
+        </div>
+        <div class="item">
+            <p><strong>Study Room Booking System</strong> &mdash; React, Node.js, PostgreSQL, JWT.<br/>
+            Real-time university study room reservation system with admin approvals and email notifications.</p>
+        </div>
+        <div class="item">
+            <p><strong>Umuhinzi Credit App</strong> &mdash; React Native, Node.js, PostgreSQL, Prisma.<br/>
+            Mobile micro-credit platform tailored to Rwandan farmers, with crop-cycle-aligned repayment plans.</p>
+        </div>
+        <div class="item">
+            <p><strong>Village Water System</strong> &mdash; React.js, Django, MySQL, JWT.<br/>
+            Full-stack web application for automated water usage tracking and billing in village communities.</p>
+        </div>
+        <div class="item">
+            <p><strong>Artisanal Coffee Roastery Management</strong> &mdash; PL/SQL, Oracle.<br/>
+            Database solution with stored procedures and triggers for order fulfillment and inventory control.</p>
+        </div>
+
+        <h2 class="section">Certifications</h2>
+        <ul>
+            <li><strong>Introduction to UNIX/Linux and Virtualization</strong> &mdash; Issued October 21, 2025.</li>
+            <li><strong>Computer Hardware Basics</strong> &mdash; Cisco Networking Academy, August 15, 2025.</li>
+            <li>Additional certifications available on request.</li>
+        </ul>
+
+        <h2 class="section">Languages</h2>
+        <p>English (Professional) &nbsp;&middot;&nbsp; French (Intermediate) &nbsp;&middot;&nbsp; Kinyarwanda (Native).</p>
+
+        <h2 class="section">Additional Information</h2>
+        <p>
+            <strong>Availability:</strong> Open to internships, full-time roles and freelance opportunities.<br/>
+            <strong>Work Style:</strong> Comfortable with both in-office and remote collaboration.<br/>
+            <strong>Interests:</strong> Software development, AI applications, and building tools for the Rwandan market.<br/>
+            <strong>References:</strong> Available upon request.
+        </p>
     </div>
 </body>
 </html>
@@ -351,14 +208,10 @@ export const generateCVHTML = () => {
 
 export const downloadCV = () => {
   const htmlContent = generateCVHTML();
-  
-  // Create a new window for printing/saving as PDF
   const printWindow = window.open('', '_blank');
   if (printWindow) {
     printWindow.document.write(htmlContent);
     printWindow.document.close();
-    
-    // Wait for content to load then trigger print dialog
     printWindow.onload = () => {
       setTimeout(() => {
         printWindow.print();
