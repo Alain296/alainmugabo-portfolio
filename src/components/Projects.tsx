@@ -1,21 +1,22 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, BarChart3, GraduationCap, Building2, TrendingUp, ListTodo, BookOpen, FolderKanban, Cpu, Calendar, Users } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
 import gymImage from "@/assets/gym-management.jpg";
 import waterImage from "@/assets/village-water.jpg";
 import coffeeImage from "@/assets/coffee-roastery.jpg";
-import sqlImage from "@/assets/sql-analytics.jpg";
 
 // Import other project images
-import studentRegistration from "@/assets/projects/student-registration.jpg";
-import todoApp from "@/assets/projects/todo-app.jpg";
-import libraryInterior from "@/assets/projects/library-interior.jpg";
 import realestateAnalytics from "@/assets/projects/realestate-analytics.jpg";
 import constructionSite from "@/assets/projects/construction-site.jpg";
+import personalFinance from "@/assets/projects/personal-finance.jpg";
+import studyRoom from "@/assets/projects/study-room.jpg";
+import airbnbClone from "@/assets/projects/airbnb-clone.jpg";
+import umuhinziCredit from "@/assets/projects/umuhinzi-credit.jpg";
+import orkestraApp from "@/assets/projects/orkestra.jpg";
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
