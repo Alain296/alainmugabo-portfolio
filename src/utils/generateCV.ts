@@ -127,7 +127,7 @@ export const generateCVHTML = () => {
         <h2 class="section">Technical Skills</h2>
         <div class="two-col">
             <p><strong>Languages:</strong> JavaScript, TypeScript, Java, Python, C#, SQL, PL/SQL.</p>
-            <p><strong>Frontend:</strong> React, HTML5, CSS3, Tailwind CSS.</p>
+            <p><strong>Frontend:</strong> React, React Native, HTML5, CSS3, Tailwind CSS.</p>
             <p><strong>Backend:</strong> Node.js, Express, Django, REST APIs.</p>
             <p><strong>Databases:</strong> PostgreSQL, MySQL, Oracle, MongoDB.</p>
             <p><strong>Tools:</strong> Prisma, Git/GitHub, Postman, Swagger.</p>
