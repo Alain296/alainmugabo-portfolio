@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music, Server, Database, FileCode, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
@@ -17,6 +17,10 @@ import studyRoom from "@/assets/projects/study-room.jpg";
 import airbnbClone from "@/assets/projects/airbnb-clone.jpg";
 import umuhinziCredit from "@/assets/projects/umuhinzi-credit.jpg";
 import orkestraApp from "@/assets/projects/orkestra.jpg";
+import sqlCode from "@/assets/projects/sql-code.jpg";
+import studentRecords from "@/assets/projects/student-records.jpg";
+import studentCourses from "@/assets/projects/student-courses.jpg";
+import todoWorkflow from "@/assets/projects/todo-workflow.jpg";
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
@@ -143,26 +147,58 @@ const projects = [
     featured: false,
   },
   {
-    id: "real-estate-analysis",
-    title: "Real Estate Analysis",
-    description: "Machine learning application analyzing real estate market trends and predicting property values based on various features.",
-    technologies: ["Python", "ML", "Pandas", "Scikit-learn"],
-    github: "https://github.com/Alain296",
-    icon: TrendingUp,
-    image: realestateAnalytics,
+    id: "airbnb-api",
+    title: "Airbnb REST API",
+    description: "Backend REST API service powering the Airbnb clone: authentication, property listings, bookings, and host management, documented with Swagger and tested with Postman.",
+    technologies: ["Node.js", "Express", "TypeScript", "MongoDB", "Swagger"],
+    github: "https://github.com/Alain296/Airbnb-api",
+    icon: Server,
+    image: airbnbClone,
     featured: false,
   },
   {
-    id: "construction-management",
-    title: "Construction Management",
-    description: "Application for managing construction projects, tracking progress, resources, and generating reports.",
-    technologies: ["Java", "OOP", "MySQL"],
-    github: "https://github.com/Alain296",
-    icon: Building2,
-    image: constructionSite,
+    id: "java-midterm-group",
+    title: "Java Midterm Group Project",
+    description: "Collaborative Java application built with Group E for the AUCA midterm: object-oriented design, modular classes, and console-driven workflows.",
+    technologies: ["Java", "OOP", "Git", "Collaboration"],
+    github: "https://github.com/Alain296/midterm_26450_group-E",
+    icon: Code2,
+    image: studentRecords,
+    featured: false,
+  },
+  {
+    id: "java-oop-portfolio",
+    title: "Java OOP Portfolio (MugaboAlain_26450)",
+    description: "Personal Java portfolio of object-oriented programming exercises and assignments covering inheritance, polymorphism, collections, and file handling.",
+    technologies: ["Java", "OOP", "JDK", "Data Structures"],
+    github: "https://github.com/Alain296/MugaboAlain_26450",
+    icon: FileCode,
+    image: studentCourses,
+    featured: false,
+  },
+  {
+    id: "windowfunctions-sql",
+    title: "SQL Window Functions Project",
+    description: "The WindowWizards SQL project exploring advanced window functions (RANK, DENSE_RANK, ROW_NUMBER, running aggregates) applied to real analytical queries.",
+    technologies: ["SQL", "Oracle", "Window Functions", "Analytics"],
+    github: "https://github.com/Alain296/The-WindowWizards-SQL-Project",
+    icon: Database,
+    image: sqlCode,
+    featured: false,
+  },
+  {
+    id: "cpp-files",
+    title: "C++ File Handling",
+    description: "C++ project focused on file I/O, streams and data persistence — reading, writing and manipulating structured records on disk.",
+    technologies: ["C++", "File I/O", "STL"],
+    github: "https://github.com/Alain296/Files",
+    icon: FileCode,
+    image: todoWorkflow,
     featured: false,
   },
 ];
+
+
 
 
 const Projects = () => {
