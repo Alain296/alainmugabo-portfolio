@@ -222,7 +222,7 @@ const projects: Record<string, Project> = {
       "SMS and email notifications",
       "Admin panel for credit officers",
     ],
-    github: "https://github.com/Alain296",
+    github: "https://github.com/RegisMfitumukiza/umuhinzi-credit-app",
     image: umuhinziCredit,
     gallery: [umuhinziCredit, umuhinziCredit, umuhinziCredit],
     category: "FinTech / Agriculture",
