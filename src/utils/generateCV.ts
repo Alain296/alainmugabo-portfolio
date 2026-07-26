@@ -111,23 +111,23 @@ export const generateCVHTML = () => {
         <h2 class="section">Professional Training</h2>
         <div class="item">
             <div class="row">
-                <span class="left">kLab Academy &mdash; Full-Stack Developer Program</span>
-                <span class="right">April 2026 &ndash; Present</span>
+                <span class="left">kLab Academy &mdash; Software Development Program (DSE)</span>
+                <span class="right">April 2026 &ndash; July 2026</span>
             </div>
-            <p class="sub">Kigali, Rwanda</p>
+            <p class="sub">Kigali, Rwanda &mdash; Completed (Certificate issued July 15, 2026)</p>
             <ul>
-                <li>Frontend development with React and modern JavaScript/TypeScript.</li>
-                <li>Backend development with Node.js, Express and RESTful API design.</li>
-                <li>Databases using PostgreSQL with Prisma ORM.</li>
-                <li>API testing and documentation with Swagger and Postman.</li>
-                <li>Applied AI track: prompt engineering and integrating AI services into apps.</li>
+                <li>Frontend development with HTML, CSS, JavaScript, React and Tailwind CSS.</li>
+                <li>Backend development with Node.js, Express.js and REST API design.</li>
+                <li>Databases with MongoDB; version control with Git &amp; GitHub; UI design with Figma.</li>
+                <li>Mobile Application Development with React Native.</li>
+                <li>Delivered under the Digital Skills for Employability (DSE) Program by DOT Rwanda &amp; Mastercard Foundation.</li>
             </ul>
         </div>
 
         <h2 class="section">Technical Skills</h2>
         <div class="two-col">
             <p><strong>Languages:</strong> JavaScript, TypeScript, Java, Python, C#, SQL, PL/SQL.</p>
-            <p><strong>Frontend:</strong> React, HTML5, CSS3, Tailwind CSS.</p>
+            <p><strong>Frontend:</strong> React, React Native, HTML5, CSS3, Tailwind CSS.</p>
             <p><strong>Backend:</strong> Node.js, Express, Django, REST APIs.</p>
             <p><strong>Databases:</strong> PostgreSQL, MySQL, Oracle, MongoDB.</p>
             <p><strong>Tools:</strong> Prisma, Git/GitHub, Postman, Swagger.</p>
@@ -189,7 +189,8 @@ export const generateCVHTML = () => {
 
         <h2 class="section">Certifications</h2>
         <ul>
-            <li><strong>Introduction to UNIX/Linux and Virtualization</strong> &mdash; Issued October 21, 2025.</li>
+            <li><strong>Certificate of Completion &mdash; kLab Academy Software Development Program</strong>, issued July 15, 2026. Digital Skills for Employability (DSE) Program by DOT Rwanda, in collaboration with kLab &amp; Mastercard Foundation. Covered HTML, CSS, JavaScript, React, Tailwind CSS, Node.js, Express.js, REST APIs, MongoDB, Git &amp; GitHub, Figma, and Mobile Application Development with React Native.</li>
+            <li><strong>Introduction to UNIX/Linux and Virtualization</strong> &mdash; issued October 21, 2025.</li>
             <li><strong>Computer Hardware Basics</strong> &mdash; Cisco Networking Academy, August 15, 2025.</li>
             <li>Additional certifications available on request.</li>
         </ul>

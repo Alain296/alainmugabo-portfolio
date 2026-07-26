@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music, Server, Database, FileCode, Code2 } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music, Server, Database, FileCode, Code2, Scale, Gavel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
@@ -21,6 +21,7 @@ import sqlCode from "@/assets/projects/sql-code.jpg";
 import studentRecords from "@/assets/projects/student-records.jpg";
 import studentCourses from "@/assets/projects/student-courses.jpg";
 import todoWorkflow from "@/assets/projects/todo-workflow.jpg";
+import myjudicialImage from "@/assets/projects/myjudicial.jpg";
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
@@ -131,7 +132,7 @@ const projects = [
     title: "Umuhinzi Credit App",
     description: "Mobile-first credit application platform for Rwandan farmers, enabling loan requests, repayment tracking, and access to micro-financing tailored to agriculture cycles.",
     technologies: ["React Native", "Node.js", "PostgreSQL", "Prisma", "REST API"],
-    github: "https://github.com/Alain296",
+    github: "https://github.com/RegisMfitumukiza/umuhinzi-credit-app",
     icon: Sprout,
     image: umuhinziCredit,
     featured: false,
@@ -144,6 +145,26 @@ const projects = [
     github: "https://github.com/Alain296",
     icon: Music,
     image: orkestraApp,
+    featured: false,
+  },
+  {
+    id: "myjudicial-frontend",
+    title: "MyJudicial Frontend",
+    description: "Modern React + Tailwind CSS frontend for MyJudicial, a digital judicial case management platform enabling citizens and legal officers to submit, track, and manage judicial cases online.",
+    technologies: ["React", "Tailwind CSS", "JavaScript", "REST API", "Vite"],
+    github: "https://github.com/My-Judicial/myjudicial-frontend",
+    icon: Scale,
+    image: myjudicialImage,
+    featured: false,
+  },
+  {
+    id: "myjudicial-backend",
+    title: "MyJudicial Backend",
+    description: "Node.js and Express backend powering the MyJudicial platform: authentication, case workflows, role-based access for judges, lawyers and citizens, and a fully documented REST API.",
+    technologies: ["Node.js", "Express", "MongoDB", "JWT", "REST API"],
+    github: "https://github.com/My-Judicial/myjudicial-backend",
+    icon: Gavel,
+    image: myjudicialImage,
     featured: false,
   },
   {
