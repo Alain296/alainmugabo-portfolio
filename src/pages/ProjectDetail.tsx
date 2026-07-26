@@ -35,6 +35,7 @@ import studyRoom from "@/assets/projects/study-room.jpg";
 import airbnbClone from "@/assets/projects/airbnb-clone.jpg";
 import umuhinziCredit from "@/assets/projects/umuhinzi-credit.jpg";
 import orkestraApp from "@/assets/projects/orkestra.jpg";
+import myjudicialImage from "@/assets/projects/myjudicial.jpg";
 
 interface Project {
   id: string;
