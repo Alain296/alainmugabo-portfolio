@@ -196,6 +196,9 @@ const projects = [
     image: todoWorkflow,
     featured: false,
   },
+];
+
+
 
 
 const Projects = () => {
