@@ -189,7 +189,8 @@ export const generateCVHTML = () => {
 
         <h2 class="section">Certifications</h2>
         <ul>
-            <li><strong>Introduction to UNIX/Linux and Virtualization</strong> &mdash; Issued October 21, 2025.</li>
+            <li><strong>Certificate of Completion &mdash; kLab Academy Software Development Program</strong>, issued July 15, 2026. Digital Skills for Employability (DSE) Program by DOT Rwanda, in collaboration with kLab &amp; Mastercard Foundation. Covered HTML, CSS, JavaScript, React, Tailwind CSS, Node.js, Express.js, REST APIs, MongoDB, Git &amp; GitHub, Figma, and Mobile Application Development with React Native.</li>
+            <li><strong>Introduction to UNIX/Linux and Virtualization</strong> &mdash; issued October 21, 2025.</li>
             <li><strong>Computer Hardware Basics</strong> &mdash; Cisco Networking Academy, August 15, 2025.</li>
             <li>Additional certifications available on request.</li>
         </ul>
