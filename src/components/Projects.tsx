@@ -132,7 +132,7 @@ const projects = [
     title: "Umuhinzi Credit App",
     description: "Mobile-first credit application platform for Rwandan farmers, enabling loan requests, repayment tracking, and access to micro-financing tailored to agriculture cycles.",
     technologies: ["React Native", "Node.js", "PostgreSQL", "Prisma", "REST API"],
-    github: "https://github.com/Alain296",
+    github: "https://github.com/RegisMfitumukiza/umuhinzi-credit-app",
     icon: Sprout,
     image: umuhinziCredit,
     featured: false,
