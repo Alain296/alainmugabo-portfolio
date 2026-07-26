@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music } from "lucide-react";
+import { ExternalLink, Github, Droplets, Dumbbell, Coffee, Building2, TrendingUp, FolderKanban, Cpu, Calendar, Users, Wallet, CalendarCheck, Home, Sprout, Music, Server, Database, FileCode, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import project images
@@ -17,6 +17,10 @@ import studyRoom from "@/assets/projects/study-room.jpg";
 import airbnbClone from "@/assets/projects/airbnb-clone.jpg";
 import umuhinziCredit from "@/assets/projects/umuhinzi-credit.jpg";
 import orkestraApp from "@/assets/projects/orkestra.jpg";
+import sqlCode from "@/assets/projects/sql-code.jpg";
+import studentRecords from "@/assets/projects/student-records.jpg";
+import studentCourses from "@/assets/projects/student-courses.jpg";
+import todoWorkflow from "@/assets/projects/todo-workflow.jpg";
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
