@@ -13,7 +13,7 @@ export const generateCVHTML = () => {
             color: #000000;
             font-family: Calibri, Arial, Helvetica, sans-serif;
             font-size: 11pt;
-            line-height: 1.35;
+            line-height: 1.4;
         }
         .doc { max-width: 174mm; margin: 0 auto; }
         h1.name {
@@ -27,7 +27,6 @@ export const generateCVHTML = () => {
         .title {
             text-align: center;
             font-size: 11pt;
-            color: #000;
             margin-bottom: 6px;
         }
         .contact {
@@ -65,6 +64,11 @@ export const generateCVHTML = () => {
             gap: 4px 24px;
         }
         .two-col p { margin-bottom: 2px; font-size: 10.5pt; }
+        .ref-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +96,7 @@ export const generateCVHTML = () => {
         <div class="item">
             <div class="row">
                 <span class="left">Adventist University of Central Africa (AUCA)</span>
-                <span class="right">2022 &ndash; 2025</span>
+                <span class="right">2023 &ndash; 2026</span>
             </div>
             <p class="sub">Bachelor of Software Engineering (Final Year)</p>
         </div>
@@ -108,7 +112,7 @@ export const generateCVHTML = () => {
         <div class="item">
             <div class="row">
                 <span class="left">kLab Academy &mdash; Full-Stack Developer Program</span>
-                <span class="right">April 2025 &ndash; Present</span>
+                <span class="right">April 2026 &ndash; Present</span>
             </div>
             <p class="sub">Kigali, Rwanda</p>
             <ul>
@@ -127,7 +131,7 @@ export const generateCVHTML = () => {
             <p><strong>Backend:</strong> Node.js, Express, Django, REST APIs.</p>
             <p><strong>Databases:</strong> PostgreSQL, MySQL, Oracle, MongoDB.</p>
             <p><strong>Tools:</strong> Prisma, Git/GitHub, Postman, Swagger.</p>
-            <p><strong>Other:</strong> AI &amp; Machine Learning basics, UI/UX, Adobe Photoshop.</p>
+            <p><strong>Other:</strong> Prompt Engineering, AI &amp; ML basics, UI/UX, Adobe Photoshop.</p>
         </div>
 
         <h2 class="section">Experience</h2>
@@ -163,7 +167,7 @@ export const generateCVHTML = () => {
             Personal finance tracker with income/expense tracking, budgets, savings goals and analytics charts.</p>
         </div>
         <div class="item">
-            <p><strong>Airbnb Booking System</strong> &mdash; React, Node.js, Express, MongoDB, REST API.<br/>
+            <p><strong>Airbnb Booking System &amp; REST API</strong> &mdash; React, Node.js, Express, MongoDB, Swagger.<br/>
             Vacation rental platform with property listings, secure bookings and host dashboards; API tested with Postman and Swagger.</p>
         </div>
         <div class="item">
@@ -193,12 +197,21 @@ export const generateCVHTML = () => {
         <h2 class="section">Languages</h2>
         <p>English (Professional) &nbsp;&middot;&nbsp; French (Intermediate) &nbsp;&middot;&nbsp; Kinyarwanda (Native).</p>
 
+        <h2 class="section">Referees</h2>
+        <div class="ref-grid">
+            <div class="item">
+                <p><strong>Robert NIYITANGA</strong><br/>
+                Facilitator, kLab Academy &mdash; Full-Stack Developer Program<br/>
+                Phone: +250 787 491 277</p>
+            </div>
+            <p style="font-size: 10.5pt;">Additional academic and professional references available upon request.</p>
+        </div>
+
         <h2 class="section">Additional Information</h2>
         <p>
             <strong>Availability:</strong> Open to internships, full-time roles and freelance opportunities.<br/>
             <strong>Work Style:</strong> Comfortable with both in-office and remote collaboration.<br/>
-            <strong>Interests:</strong> Software development, AI applications, and building tools for the Rwandan market.<br/>
-            <strong>References:</strong> Available upon request.
+            <strong>Interests:</strong> Software development, AI applications, and building tools for the Rwandan market.
         </p>
     </div>
 </body>
