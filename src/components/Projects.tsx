@@ -21,6 +21,7 @@ import sqlCode from "@/assets/projects/sql-code.jpg";
 import studentRecords from "@/assets/projects/student-records.jpg";
 import studentCourses from "@/assets/projects/student-courses.jpg";
 import todoWorkflow from "@/assets/projects/todo-workflow.jpg";
+import myjudicialImage from "@/assets/projects/myjudicial.jpg";
 
 // Animated counter component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
